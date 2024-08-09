@@ -21,26 +21,26 @@ The annotated point cloud data can be used to train a deep learning model for po
 If you find our work useful in your research, please consider citing:
 
 	@misc{https://doi.org/10.20394/vwyl2on6,
-	      doi = {10.20394/VWYL2ON6},
-	      url = {https://data.ubdc.ac.uk/dataset/8bccf530-0f07-4ff3-a8d5-443328fcd415},
-	      author = {{Urban Big Data Centre}},
-	      keywords = {Urban Planning},
-	      language = {en},
-	      title = {Glasgow 3D city models derived from airborne LiDAR point clouds licensed data},
-	      publisher = {University of Glasgow},
-	      year = {2024}
-   	}
-
-   	@INPROCEEDINGS{10144215,
-	  author={Li, Qiaosi and Zhao, Qunshan},
-	  booktitle={2023 Joint Urban Remote Sensing Event (JURSE)}, 
-	  title={Weakly-Supervised Semantic Segmentation of Airborne LiDAR Point Clouds in Hong Kong Urban Areas}, 
-	  year={2023},
-	  volume={},
-	  number={},
-	  pages={1-4},
-	  keywords={Point cloud compression;Solid modeling;Laser radar;Three-dimensional displays;Annotations;Semantic segmentation;Atmospheric modeling;Airborne LiDAR;Point cloud classification;Urban buildings and trees;Deep learning},
-	  doi={10.1109/JURSE57346.2023.10144215}
+		doi = {10.20394/VWYL2ON6},
+		url = {https://data.ubdc.ac.uk/dataset/8bccf530-0f07-4ff3-a8d5-443328fcd415},
+		author = {{Urban Big Data Centre}},
+		keywords = {Urban Planning},
+		language = {en},
+		title = {Glasgow 3D city models derived from airborne LiDAR point clouds licensed data},
+		publisher = {University of Glasgow},
+		year = {2024}
+	}
+	
+	@INPROCEEDINGS{10144215,
+		author={Li, Qiaosi and Zhao, Qunshan},
+		booktitle={2023 Joint Urban Remote Sensing Event (JURSE)}, 
+		title={Weakly-Supervised Semantic Segmentation of Airborne LiDAR Point Clouds in Hong Kong Urban Areas}, 
+		year={2023},
+		volume={},
+		number={},
+		pages={1-4},
+		keywords={Point cloud compression;Solid modeling;Laser radar;Three-dimensional displays;Annotations;Semantic segmentation;Atmospheric modeling;Airborne LiDAR;Point cloud classification;Urban buildings and trees;Deep learning},
+		doi={10.1109/JURSE57346.2023.10144215}
 	}
 
 
