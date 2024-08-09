@@ -8,11 +8,13 @@ The figure shows an example of point cloud classification result.
 ![sqn_result](https://github.com/user-attachments/assets/0dd99fa3-f7df-4f72-8deb-4a3f426e24ac)
 
 ## Usage notes
-This code for point cloud classification has been implemented with Python 3.6, TensorFlow 1.11.0, CUDA 9.0, and cuDNN 7.4.1 on Ubuntu 18.04.6. Following instruction of [SQN](https://github.com/QingyongHu/SQN?tab=readme-ov-file) to set up. The pretrain model using Glasgow city point cloud can be found in ?
+This code for point cloud classification has been implemented with Python 3.6, TensorFlow 1.11.0, CUDA 9.0, and cuDNN 7.4.1 on Ubuntu 18.04.6. Following instruction of [SQN](https://github.com/QingyongHu/SQN?tab=readme-ov-file) to set up. The pretrain model using Glasgow city point cloud can be found in the [model](https://github.com/QiaosiLi/SQN_ALS_Classification/tree/main/models) folder.
 
 ## Dataset
 ### Glasgow Annotated Airborne LiDAR Point Clouds 
 We prepared a set of training and validation data to classify the whole LiDAR dataset. Four tiles of 1×1 km2 ALS point clouds were labelled for SQN model training. Training data cover diverse landscape, which include the historical, modern buildings, common residential, stylish building complex, planted trees, and semi-natural woodlands. Four tiles of 0.5×0.5 km2 covering commercial, residential, industrial area, and modern building complex were full point annotated. Our annotated point clouds and the training and validation input data that are ready to feed into the SQN model are published in [Urban Big Data Centre data catalogue](https://data.ubdc.ac.uk/datasets/glasgow-3d-city-models-derived-from-airborne-lidar-point-clouds-licensed-data).
+
+The annotated point cloud data can be used to train a deep learning model for point cloud classification or help advance the manipulation within airborne LiDAR. 
 
 ### Citation
 
