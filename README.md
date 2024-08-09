@@ -1,83 +1,51 @@
-[![arXiv](https://img.shields.io/badge/arXiv-2104.04891-b31b1b.svg)](https://arxiv.org/abs/2104.04891)
-[![GitHub Stars](https://img.shields.io/github/stars/QingyongHu/SQN?style=social)](https://github.com/QingyongHu/SQN)
-![visitors](https://visitor-badge.glitch.me/badge?page_id=QingyongHu/SQN)
-[![License CC BY-NC-SA 4.0](https://img.shields.io/badge/license-CC4.0-blue.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode)
 
-# SQN: Weakly-Supervised Semantic Segmentation of Large-Scale 3D Point Clouds (ECCV2022)
 
-This is the official repository of the **Semantic Query Network (SQN)**. For technical details, please refer to:
+# Weakly-Supervised Semantic Segmentation of Airborne LiDAR Point Clouds
 
-**SQN: Weakly-Supervised Semantic Segmentation of Large-Scale 3D Point Clouds** <br />
-[Qingyong Hu](https://qingyonghu.github.io/), [Bo Yang](https://yang7879.github.io/), [Guangchi Fang]()
-, [Ales Leonardis](https://www.cs.bham.ac.uk/~leonarda/),
-[Yulan Guo](http://yulanguo.me/), [Niki Trigoni](https://www.cs.ox.ac.uk/people/niki.trigoni/)
-, [Andrew Markham](https://www.cs.ox.ac.uk/people/andrew.markham/). <br />
-**[[Paper](https://arxiv.org/abs/2104.04891)] [[Video](https://youtu.be/Q6wICSRRw3s)]** <br />
+This repository applied **Semantic Query Network (SQN)** to classify the Airborne LiDAR Point Clouds. The SQN only requires annotating less than 0.1% of raw points and allows great error tolerance to decide the annotation in boundary areas for model training, which largely saves manpower and time to prepare training data for large-scale ALS datasets.
+The figure shows an example of point cloud classification result.
 
-### (1) Setup
+![sqn_result](https://github.com/user-attachments/assets/0dd99fa3-f7df-4f72-8deb-4a3f426e24ac)
 
-This code has been tested with Python 3.5, Tensorflow 1.11, CUDA 9.0 and cuDNN 7.4.1 on Ubuntu 16.04/Ubuntu 18.04.
+## Usage notes
+This code for point cloud classification has been implemented with Python 3.6, TensorFlow 1.11.0, CUDA 9.0, and cuDNN 7.4.1 on Ubuntu 18.04.6. Following instruction of [SQN](https://github.com/QingyongHu/SQN?tab=readme-ov-file) to set up. The pretrain model using Glasgow city point cloud can be found in ?
 
-- Clone the repository
-
-```
-git clone --depth=1 https://github.com/QingyongHu/SQN && cd SQN
-```
-
-- Setup python environment
-
-```
-conda create -n sqn python=3.5
-source activate sqn
-pip install -r helper_requirements.txt
-sh compile_op.sh
-```
-
-### (2) Training (Semantic3D as example)
-
-First, follow the RandLA-Net [instruction](https://github.com/QingyongHu/RandLA-Net) to prepare the dataset, and then
-manually change the
-dataset [path](https://github.com/QingyongHu/SQN/blob/f75eb51532a5319c0da5320c20f58fbe5cb3bbcd/main_Semantic3D.py#L17) here.
-
-- Start training with weakly supervised setting:
-```
-python main_Semantic3D.py --mode train --gpu 0 --labeled_point 0.1%
-```
-- Evaluation:
-```
-python main_Semantic3D.py --mode test --gpu 0 --labeled_point 0.1%
-```
-
-Quantitative results achieved by our SQN:
-
-| ![2](imgs/Semantic3D.gif)   | ![z](imgs/SensatUrban.gif) |
-| ------------------------------ | ---------------------------- |
-| ![2](imgs/Toronto3D.gif)   | ![z](imgs/S3DIS.gif) |
-
-### (3) Sparse Annotation Demo
-
-<p align="center"> <a href="https://youtu.be/N0UAeY31msY"><img src="imgs/Demo_cover.png" width="70%"></a> </p>
-
+## Dataset
+### Glasgow Annotated Airborne LiDAR Point Clouds 
+We prepared a set of training and validation data to classify the whole LiDAR dataset. Four tiles of 1×1 km2 ALS point clouds were labelled for SQN model training. Training data cover diverse landscape, which include the historical, modern buildings, common residential, stylish building complex, planted trees, and semi-natural woodlands. Four tiles of 0.5×0.5 km2 covering commercial, residential, industrial area, and modern building complex were full point annotated. Our annotated point clouds and the training and validation input data that are ready to feed into the SQN model are published in [Urban Big Data Centre data catalogue](https://data.ubdc.ac.uk/datasets/glasgow-3d-city-models-derived-from-airborne-lidar-point-clouds-licensed-data).
 
 ### Citation
 
 If you find our work useful in your research, please consider citing:
 
-	@inproceedings{hu2021sqn,
-      title={SQN: Weakly-Supervised Semantic Segmentation of Large-Scale 3D Point Clouds},
-      author={Hu, Qingyong and Yang, Bo and Fang, Guangchi and Guo, Yulan and Leonardis, Ales and Trigoni, Niki and Markham, Andrew},
-      booktitle={European Conference on Computer Vision},
-      year={2022}
-    }
+	@misc{https://doi.org/10.20394/vwyl2on6,
+	      doi = {10.20394/VWYL2ON6},
+	      url = {https://data.ubdc.ac.uk/dataset/8bccf530-0f07-4ff3-a8d5-443328fcd415},
+	      author = {{Urban Big Data Centre}},
+	      keywords = {Urban Planning},
+	      language = {en},
+	      title = {Glasgow 3D city models derived from airborne LiDAR point clouds licensed data},
+	      publisher = {University of Glasgow},
+	      year = {2024}
+   	}
+
+   	@INPROCEEDINGS{10144215,
+	  author={Li, Qiaosi and Zhao, Qunshan},
+	  booktitle={2023 Joint Urban Remote Sensing Event (JURSE)}, 
+	  title={Weakly-Supervised Semantic Segmentation of Airborne LiDAR Point Clouds in Hong Kong Urban Areas}, 
+	  year={2023},
+	  volume={},
+	  number={},
+	  pages={1-4},
+	  keywords={Point cloud compression;Solid modeling;Laser radar;Three-dimensional displays;Annotations;Semantic segmentation;Atmospheric modeling;Airborne LiDAR;Point cloud classification;Urban buildings and trees;Deep learning},
+	  doi={10.1109/JURSE57346.2023.10144215}
+	}
+
 
 ## Related Repos
 
-1. [RandLA-Net: Efficient Semantic Segmentation of Large-Scale Point Clouds](https://github.com/QingyongHu/RandLA-Net) ![GitHub stars](https://img.shields.io/github/stars/QingyongHu/RandLA-Net.svg?style=flat&label=Star)
-2. [SoTA-Point-Cloud: Deep Learning for 3D Point Clouds: A Survey](https://github.com/QingyongHu/SoTA-Point-Cloud) ![GitHub stars](https://img.shields.io/github/stars/QingyongHu/SoTA-Point-Cloud.svg?style=flat&label=Star)
-3. [3D-BoNet: Learning Object Bounding Boxes for 3D Instance Segmentation on Point Clouds](https://github.com/Yang7879/3D-BoNet) ![GitHub stars](https://img.shields.io/github/stars/Yang7879/3D-BoNet.svg?style=flat&label=Star)
-4. [SpinNet: Learning a General Surface Descriptor for 3D Point Cloud Registration](https://github.com/QingyongHu/SpinNet) ![GitHub stars](https://img.shields.io/github/stars/QingyongHu/SpinNet.svg?style=flat&label=Star)
-5. [SensatUrban: Learning Semantics from Urban-Scale Photogrammetric Point Clouds](https://github.com/QingyongHu/SensatUrban) ![GitHub stars](https://img.shields.io/github/stars/QingyongHu/SensatUrban.svg?style=flat&label=Star)
-6. [Not All Points Are Equal: Learning Highly Efficient Point-based Detectors for 3D LiDAR Point Clouds](https://github.com/yifanzhang713/IA-SSD) ![GitHub stars](https://img.shields.io/github/stars/yifanzhang713/IA-SSD.svg?style=flat&label=Star)
+1. [SQN: Weakly-Supervised Semantic Segmentation of Large-Scale 3D Point Clouds](https://github.com/QingyongHu/SQN)
+2. [construct_building_tree_3d_models_by_lidar](https://github.com/QiaosiLi/construct_building_tree_3d_models_by_lidar)
 
 
 
