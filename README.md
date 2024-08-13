@@ -16,7 +16,10 @@ We prepared a set of training and validation data to classify the whole LiDAR da
 
 The annotated point cloud data can be used to train a deep learning model for point cloud classification or help advance the manipulation within airborne LiDAR. 
 
-### Citation
+### Hong Kong Annotated Airborne LiDAR Point Clouds 
+The annotated point clouds were generated to train the weakly supervised semantic segmentation algorithm Semantic Query Network (SQN) to classify point clouds. The dataset covers 16 tiles of airborne LiDAR data in an area of 7.2 km2  in Shatin, Hong Kong, China. 11 tiles were used for training, while 5 tiles were used for validation. There are multiple types of construction in the dataset including high-rise residential buildings, low-rise village houses, and large public buildings. Green spaces are mainly composed of wood areas in open spaces (e.g., in parks and hills) and planted trees in residential gardens and nearby roads. Point clouds are classified in ground, buildings, and trees. This dataset is published in [Zenodo](???).The LiDAR data is owned by the Hong Kong government. Please visit the [Spatial Data Portal, Survey Division, CEDD](https://sdportal.cedd.gov.hk/#/en/) for more details.
+
+## Citation
 
 If you find our work useful in your research, please consider citing:
 
